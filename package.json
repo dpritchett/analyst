@@ -14,5 +14,6 @@
     "url": "http://github.com/dpritchett/analyst.git" },
 
   "dependencies": {
+    "node-query": "0.3.3"
   }
 }
