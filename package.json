@@ -1,13 +1,18 @@
 {
-  "name":       "analyst",
-  "version":    "0.0.1",
+  "name":         "analyst",
+  "version":      "0.0.2",
 
-  "author":     "Daniel Pritchett <dpritchett@gmail.com> (http://dpritchett.net)",
+  "description":  "Crank out the queries, spread the love.",
 
-  "main":       "analyst",
-  "engines":    { "node" : ">=0.10.21" },
+  "author":       "Daniel Pritchett <dpritchett@gmail.com> (http://dpritchett.net)",
 
-  "repository": {
+  "main":         "analyst",
+  "engines":      { "node" : ">=0.10.21" },
+
+  "repository":   {
     "type": "git",
-    "url": "http://github.com/dpritchett/analyst.git" }
+    "url": "http://github.com/dpritchett/analyst.git" },
+
+  "dependencies": {
+  }
 }
