@@ -1,12 +1,18 @@
 module.exports = (grunt) ->
   grunt.initConfig \
     shell:
-      testAll:
+      testAllCoffee:
         command:     "ls ./test/*.coffee | xargs -n1 coffee"
         options:
-          stdout:      true
+          failOnError: true
+      testAllJs:
+        command:     "ls ./test/*.js | xargs -n1 node"
+        options:
           failOnError: true
 
   grunt.loadNpmTasks('grunt-shell')
 
-  grunt.registerTask('default', ['shell:testAll'])
+  grunt.registerTask('test',    ['shell:testAllCoffee', 'shell:testAllJs'])
+  grunt.registerTask('test',    ['shell:testAllCoffee', 'shell:testAllJs'])
+
+  grunt.registerTask('default', ['test'])
