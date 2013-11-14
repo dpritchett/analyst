@@ -4,10 +4,10 @@
 
   "author":     "Daniel Pritchett <dpritchett@gmail.com> (http://dpritchett.net)",
 
-  "main":       "analyst"
+  "main":       "analyst",
   "engines":    { "node" : ">=0.10.21" },
 
   "repository": {
     "type": "git",
-    "url": "http://github.com/dpritchett/analyst.git" },
+    "url": "http://github.com/dpritchett/analyst.git" }
 }
