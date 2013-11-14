@@ -1,6 +1,6 @@
 {
   "name":         "analyst",
-  "version":      "0.0.2",
+  "version":      "0.0.3",
 
   "description":  "Crank out the queries, spread the love.",
 
@@ -14,6 +14,14 @@
     "url": "http://github.com/dpritchett/analyst.git" },
 
   "dependencies": {
-    "node-query": "0.3.3"
+    "any-db-postgres":  "~1.0.0",
+    "dotenv":           "~0.2.0",
+    "pg":               "~2.8.2",
+    "node-query":       "~0.3.3"
+  }, 
+
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "grunt":         "~0.4.1"
   }
 }
