@@ -1,0 +1,13 @@
+{
+  "name":       "analyst",
+  "version":    "0.0.1",
+
+  "author":     "Daniel Pritchett <dpritchett@gmail.com> (http://dpritchett.net)",
+
+  "main":       "analyst"
+  "engines":    { "node" : ">=0.10.21" },
+
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/dpritchett/analyst.git" },
+}
