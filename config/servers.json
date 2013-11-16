@@ -1,0 +1,6 @@
+{
+  "servers": [
+    { "name": "postgres_test", "adapter" : "postgres" },
+    { "name": "another_pg", "adapter" : "postgres" }
+  ]
+}

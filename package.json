@@ -1,10 +1,22 @@
 {
   "name":         "analyst",
-  "version":      "0.0.3",
+  "version":      "0.0.4",
 
   "description":  "Crank out the queries, spread the love.",
 
   "author":       "Daniel Pritchett <dpritchett@gmail.com> (http://dpritchett.net)",
+
+  "contributors": [{ "name": "Daniel Pritchett", "email": "dpritchett@gmail.com" }],
+
+  "keywords": [
+    "report",
+    "analysis",
+    "sql",
+    "query",
+    "mysql",
+    "postgresql",
+    "sqlserver"
+  ],
 
   "main":         "analyst",
   "engines":      { "node" : ">=0.10.21" },
@@ -16,13 +28,16 @@
   "dependencies": {
     "any-db-postgres":  "~1.0.0",
     "dotenv":           "~0.2.0",
+    "express":          "~3.4.4",
     "pg":               "~2.8.2",
     "node-query":       "~0.3.3"
   }, 
 
   "devDependencies": {
-    "coffee-script": "~1.6.3",
-    "grunt":         "~0.4.1",
-    "grunt-shell":   "~0.5.0"
+    "coffee-script":        "~1.6.3",
+    "grunt":                "~0.4.1",
+    "grunt-coffeelint":     "~0.0.7",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-shell":          "~0.5.0"
   }
 }
