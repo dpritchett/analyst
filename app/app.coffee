@@ -10,9 +10,28 @@ rowServer = (response) ->
     response.setHeader 'Content-Length', body.length
     response.end body
 
-app.get('/',
+app.get('/'
   (req, res) ->
-    conn = conns[0]
+    body =
+      servers: []
+
+    for name, conn of conns
+      body.servers.push(
+        name: name,
+        url:  "/db/#{name}"
+      )
+
+    body = JSON.stringify(body)
+
+    res.setHeader 'Content-Length', body.length
+    res.setHeader 'content-Type', 'application/json'
+    res.end body
+  )
+
+
+app.get('/db/:dbName',
+  (req, res) ->
+    conn = conns[req.params.dbName]
     res.setHeader 'content-Type', 'application/json'
     dbs.fetchRows(conn, rowServer(res))
   )

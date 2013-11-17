@@ -19,6 +19,7 @@
     if (callback == null) {
       callback = dump;
     }
+    console.log("Connecting to " + serverName);
     dbURL = process.env["" + (serverName.toUpperCase()) + "_URL"];
     return conn = anyDB.createConnection(dbURL);
   };
@@ -32,14 +33,13 @@
 
   exports.connections = connections;
 
-  exports.fetchRows = function(conn, queryString, callback) {
-    if (queryString == null) {
-      queryString = null;
-    }
+  exports.fetchRows = function(conn, callback) {
+    var queryString;
     if (callback == null) {
       callback = dump;
     }
-    queryString || (queryString = "SELECT '" + conn.database + "' as SERVER, NOW() as THETIME;");
+    queryString = "SELECT '" + conn.database + "' as SERVER, NOW() as THETIME;";
+    console.log("Fetching row from " + conn.database);
     return conn.query(queryString, callback);
   };
 

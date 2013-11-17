@@ -8,6 +8,7 @@ dump = (error, result) ->
   console.log result.rows
 
 connectToServer = (serverName, callback=dump) ->
+  console.log "Connecting to #{serverName}"
   dbURL = process.env["#{serverName.toUpperCase()}_URL"]
   conn  = anyDB.createConnection(dbURL)  # Takes an optional callback
 
@@ -19,6 +20,7 @@ for server in serverList
 exports.connections = connections
 
 exports.fetchRows = (conn, callback=dump) ->
-  queryString ||= "SELECT '#{conn.database}' as SERVER, NOW() as THETIME;"
+  queryString = "SELECT '#{conn.database}' as SERVER, NOW() as THETIME;"
+  console.log "Fetching row from #{conn.database}"
 
   conn.query(queryString, callback)
