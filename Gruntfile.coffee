@@ -7,7 +7,15 @@ module.exports = (grunt) ->
 
     shell:
       build:
-        command: "coffee -w -o ./src/js -c ./src/coffee/"
+        command: "coffee -o ./src/js -c ./src/coffee/"
+        options:
+          failOnError: true
+      push:
+        command: "git push origin master"
+        options:
+          failOnError: true
+      publish:
+        command: "npm publish ."
         options:
           failOnError: true
       testAllCoffee:
@@ -18,6 +26,12 @@ module.exports = (grunt) ->
         command:     "ls ./test/*.js | xargs -n1 node"
         options:
           failOnError: true
+      watch:
+        command: "coffee -w -o ./src/js -c ./src/coffee/*.coffee"
+        standardOut: true
+        standardError: true
+        options:
+          failOnError: true
   )
 
   grunt.loadNpmTasks('grunt-shell')
@@ -25,6 +39,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-coffee')
 
   grunt.registerTask('test',    ['shell:testAllCoffee', 'shell:testAllJs'])
-  grunt.registerTask('build',    ['shell:build'])
+  grunt.registerTask('build',   'shell:build')
+  grunt.registerTask('watch',   'shell:watch')
+  grunt.registerTask('push',    'shell:push')
+
+  grunt.registerTask('publish', ['build', 'test', 'push', 'shell:publish'])
 
   grunt.registerTask('default', ['coffeelint', 'test'])

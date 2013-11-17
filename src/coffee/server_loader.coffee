@@ -1,16 +1,24 @@
-exports.serverList = require('../../config/servers.json').servers
+anyDB      = require('any-db-postgres')
+serverList = require('../../config/servers.json').servers
+dotenv     = require('dotenv')
 
-exports.connectToServer = (serverName) ->
-  dotenv = require('dotenv')
-  dotenv.load()
+dotenv.load()
 
-  anyDB = require('any-db-postgres')
+dump = (error, result) ->
+  console.log result.rows
+
+connectToServer = (serverName, callback=dump) ->
   dbURL = process.env["#{serverName.toUpperCase()}_URL"]
-
   conn  = anyDB.createConnection(dbURL)  # Takes an optional callback
 
-  sql   = "SELECT '#{serverName}' as SERVER, NOW() as THETIME;"
+connections = {}
 
-  conn.query(sql).on('row', (row) ->
-    console.log(row)
-    conn.end())
+for server in serverList
+  connections[server.name] = connectToServer(server.name)
+
+exports.connections = connections
+
+exports.fetchRows = (conn, callback=dump) ->
+  queryString ||= "SELECT '#{conn.database}' as SERVER, NOW() as THETIME;"
+
+  conn.query(queryString, callback)

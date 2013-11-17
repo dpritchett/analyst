@@ -1,6 +1,6 @@
-serverLoader = require('../src/js/server_loader')
+rowFetcher = require('../src/js/server_loader')
 
-console.log "Testing server connections:"
+console.log "Testing row fetcher"
 
 for server in serverLoader.serverList
   serverLoader.connectToServer(server.name)
