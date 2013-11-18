@@ -15,4 +15,4 @@ organization with databases and non-developer team members.
 * You!             fork this repo today!
 
 # License
-[MIT License](LICENSE.md)
+[MIT License](LICENSE.txt)
