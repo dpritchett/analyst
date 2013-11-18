@@ -13,3 +13,6 @@ organization with databases and non-developer team members.
 # Who
 Daniel Pritchett <dpritchett@gmail.com> http://dpritchett.net
 You!             fork this repo today!
+
+# License
+[MIT License](LICENSE.md)
