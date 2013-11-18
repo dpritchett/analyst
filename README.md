@@ -11,8 +11,8 @@ The ability to quickly generate reports can provide immediate value to any
 organization with databases and non-developer team members.
 
 # Who
-Daniel Pritchett <dpritchett@gmail.com> http://dpritchett.net
-You!             fork this repo today!
+* Daniel Pritchett <dpritchett@gmail.com> http://dpritchett.net
+* You!             fork this repo today!
 
 # License
 [MIT License](LICENSE.md)
