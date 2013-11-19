@@ -1,6 +1,10 @@
 {
-  "servers": [
+  "development": [
     { "name": "postgres_test", "adapter" : "postgres" },
     { "name": "another_pg", "adapter" : "postgres" }
+  ],
+
+  "staging": [
+    { "name": "postgres_test_staging", "adapter" : "postgres" }
   ]
 }

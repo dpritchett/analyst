@@ -10,6 +10,10 @@ module.exports = (grunt) ->
         command: "coffee -o ./src/js -c ./src/coffee/"
         options:
           failOnError: true
+      buildApp:
+        command: "coffee -o . -c ./app/app.coffee"
+        options:
+          failOnError: true
       push:
         command: "git push origin master"
         options:
@@ -39,7 +43,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-coffee')
 
   grunt.registerTask('test',    ['shell:testAllCoffee', 'shell:testAllJs'])
-  grunt.registerTask('build',   'shell:build')
+  grunt.registerTask('build',   ['shell:build', 'shell:buildApp'])
   grunt.registerTask('watch',   'shell:watch')
   grunt.registerTask('push',    'shell:push')
 

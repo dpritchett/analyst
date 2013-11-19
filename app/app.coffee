@@ -1,7 +1,15 @@
 express = require('express')
 app     = express()
 
-dbs   = require('../src/js/server_loader.js')
+app.use(express.logger())
+app.use(express.static(__dirname + '/public'))
+
+dotenv  = require('dotenv')
+dotenv.load()
+
+PORT    = process.env["PORT"] || 3000
+
+dbs   = require('./src/js/server_loader.js')
 conns = dbs.connections
 
 rowServer = (response) ->
@@ -10,7 +18,7 @@ rowServer = (response) ->
     response.setHeader 'Content-Length', body.length
     response.end body
 
-app.get('/'
+app.get('/db'
   (req, res) ->
     body =
       servers: []
@@ -36,5 +44,5 @@ app.get('/db/:dbName',
     dbs.fetchRows(conn, rowServer(res))
   )
 
-app.listen(3000)
-console.log('Listening on port 3000')
+app.listen(PORT)
+console.log("Listening on port #{PORT}")

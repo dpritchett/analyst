@@ -1,8 +1,10 @@
 anyDB      = require('any-db-postgres')
-serverList = require('../../config/servers.json').servers
 dotenv     = require('dotenv')
-
 dotenv.load()
+
+ENV_NAME   = process.env["NODE_ENV"]
+serverList = require('../../config/servers.json')[ENV_NAME]
+
 
 dump = (error, result) ->
   console.log result.rows
