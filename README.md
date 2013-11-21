@@ -19,4 +19,5 @@ organization with databases and non-developer team members.
 
 # Thanks
 Many thanks to [Rackspace](http://www.rackspace.com) for providing test servers for this project!
+
 [![Rackspace Logo](/public/Rackspace_Cloud_Company_Logo_clr_300x109.jpg)](http://www.rackspace.com)
