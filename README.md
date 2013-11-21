@@ -16,3 +16,7 @@ organization with databases and non-developer team members.
 
 # License
 [MIT License](LICENSE.txt)
+
+# Thanks
+Many thanks to [http://www.rackspace.com](Rackspace) for providing test servers for this project!
+![Rackspace Logo](/public/Rackspace_Cloud_Company_Logo_clr_300x109.jpg)
